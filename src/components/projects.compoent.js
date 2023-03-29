@@ -5,16 +5,16 @@ import Tasks from './tasks.components';
 // Projects Component
 function Projects() {
     const [title, setTitle] = useState('');
-    if (localStorage.getItem('allTheProjects') == null || localStorage.getItem('allTheProjects') == 'null') {
+    if (localStorage.getItem('allTheProjects') === null || localStorage.getItem('allTheProjects') === 'null') {
         var allTheProjects = 'null';
     } else {
-        var allTheProjects = JSON.parse(localStorage.getItem('allTheProjects'));
+        allTheProjects = JSON.parse(localStorage.getItem('allTheProjects'));
     }
     function addProject(e) {
         e.preventDefault();
         var allTheProjects = JSON.parse(localStorage.getItem('allTheProjects'));
 
-        if (localStorage.getItem('allTheProjects') != 'null') {
+        if (localStorage.getItem('allTheProjects') !== 'null') {
             let newProject = {
                 id: allTheProjects.length + 1,
                 name: title,
@@ -24,7 +24,7 @@ function Projects() {
             allTheProjects.push(newProject)
             localStorage.setItem('allTheProjects', JSON.stringify(allTheProjects))
 
-            var allTheProjects = JSON.parse(localStorage.getItem('allTheProjects'));
+            allTheProjects = JSON.parse(localStorage.getItem('allTheProjects'));
 
         } else {
             let newProject = [{
@@ -34,7 +34,7 @@ function Projects() {
             }]
             localStorage.setItem('allTheProjects', JSON.stringify(newProject))
 
-            var allTheProjects = JSON.parse(localStorage.getItem('allTheProjects'));
+            allTheProjects = JSON.parse(localStorage.getItem('allTheProjects'));
         }
         setTitle('')
     }
@@ -52,7 +52,7 @@ function Projects() {
             </div>
 
             <ul>
-                {allTheProjects != 'null' && allTheProjects.reverse().map((project, index) => (
+                {allTheProjects !== 'null' && allTheProjects.reverse().map((project, index) => (
                     <div key={index} style={{ marginBottom: '5vh' }}>
                         <div>
                             <h3>{project.name}</h3>
