@@ -1,3 +1,7 @@
+This is a assignment focusing more on functionality and less on UI.
+
+You can check it out on https://clinquant-moonbeam-79d30b.netlify.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
